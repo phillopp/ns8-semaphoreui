@@ -1,19 +1,19 @@
 {
-  "name": "kickstart",
+  "name": "semaphoreui",
   "description": {
-    "en": "My kickstart module"
+    "en": "My Semaphore UI module"
   },
   "categories": [],
   "authors": [
     {
-      "name": "Name Surname",
-      "email": "author@yourmail.org"
+      "name": "Philip Falliano",
+      "email": "philip.falliano@phillopp.de"
     }
   ],
   "docs": {
-    "documentation_url": "https://docs.kickstart.com/",
-    "bug_url": "https://github.com/NethServer/dev",
-    "code_url": "https://github.com/author/ns8-kickstart"
+    "documentation_url": "https://www.semaphoreui.com/docs/",
+    "bug_url": "https://github.com/phillopp/ns8-semaphoreui",
+    "code_url": "https://github.com/phillopp/ns8-semaphoreui"
   },
-  "source": "ghcr.io/nethserver/kickstart"
+  "source": "ghcr.io/phillopp/semaphoreui"
 }
