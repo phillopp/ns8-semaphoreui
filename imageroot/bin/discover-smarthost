@@ -21,12 +21,12 @@ envfile = "smarthost.env"
 with open(envfile + ".tmp", "w") as efp:
     # HINT for semaphoreui: adjust variable names as needed
     print(f"SMTP_ENABLED={'1' if smtp_settings['enabled'] else ''}", file=efp)
-    print(f"SMTP_HOST={smtp_settings['host']}", file=efp)
-    print(f"SMTP_PORT={smtp_settings['port']}", file=efp)
-    print(f"SMTP_USERNAME={smtp_settings['username']}", file=efp)
-    print(f"SMTP_PASSWORD={smtp_settings['password']}", file=efp)
+    print(f"SEMAPHORE_EMAIL_HOST={smtp_settings['host']}", file=efp)
+    print(f"SEMAPHORE_EMAIL_PORT={smtp_settings['port']}", file=efp)
+    print(f"SEMAPHORE_EMAIL_USERNAME={smtp_settings['username']}", file=efp)
+    print(f"SEMAPHORE_EMAIL_PASSWORD={smtp_settings['password']}", file=efp)
     print(f"SMTP_ENCRYPTION={smtp_settings['encrypt_smtp']}", file=efp)
-    print(f"SMTP_TLSVERIFY={'1' if smtp_settings['tls_verify'] else ''}", file=efp)
+    print(f"SEMAPHORE_EMAIL_TLS={'True' if smtp_settings['tls_verify'] else 'False'}", file=efp)
 
 # Commit changes by replacing the existing envfile:
 os.replace(envfile + ".tmp", envfile)

@@ -20,12 +20,15 @@ ExecStartPre=/bin/rm -f %t/semaphoreui-app.pid %t/semaphoreui-app.ctr-id
 ExecStartPre=-runagent discover-smarthost
 ExecStart=/usr/bin/podman run --conmon-pidfile %t/semaphoreui-app.pid \
     --cidfile %t/semaphoreui-app.ctr-id --cgroups=no-conmon \
-    --pod-id-file %t/semaphoreui.pod-id --replace -d --name  semaphoreui-app \
-    --volume semaphoreui-app:/var/www/html/:Z \
-    --volume ./config:/tmp:Z \
-    --env=NGINX_* \
-    --env 'CONFIG_DATABASE_URI="postgresql://postgres:Nethesis,1234@127.0.0.1:5432/semaphoreui"' \
-    ${NGINX_IMAGE}
+    --pod-id-file %t/semaphoreui.pod-id --replace -d --name semaphoreui-app \
+    --env=SEMAPHORE_* \
+    --env SEMAPHORE_DB_DIALECT=postgres \
+    --env SEMAPHORE_DB_USER=postgres \
+    --env SEMAPHORE_DB_HOST=127.0.0.1 \
+    --env SEMAPHORE_DB_PORT=5432 \
+    --env SEMAPHORE_DB_NAME=semaphoreui \
+    --env SEMAPHORE_DB_PASSWORD=Nethesis,1234 \
+    ${SEMAPHORE_IMAGE}
 ExecStop=/usr/bin/podman stop --ignore --cidfile %t/semaphoreui-app.ctr-id -t 10
 ExecReload=/usr/bin/podman kill -s HUP semaphoreui-app
 SyslogIdentifier=%u
