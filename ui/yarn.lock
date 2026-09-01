@@ -5396,9 +5396,9 @@ js-queue@2.0.2:
   integrity sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==
 
 js-yaml@^3.13.1:
-  version "3.14.1"
-  resolved "https://registry.npmmirror.com/js-yaml/download/js-yaml-3.14.1.tgz?cache=0&sync_timestamp=1618847165988&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fjs-yaml%2Fdownload%2Fjs-yaml-3.14.1.tgz"
-  integrity sha1-2ugS/bOCX6MGYJqHFzg8UMNqBTc=
+  version "3.15.1"
+  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.15.1.tgz#24bc95028f361cdaaa84745b06a109c4486773c0"
+  integrity sha512-S99WuO3HlhO3XN41EtYUNl9zzXjoJx7QvmipxsJVxtCBT0YHEFy+iOJhjSvrmV12nYhWpZaM8lPHkJm0yUMbag==
   dependencies:
     argparse "^1.0.7"
     esprima "^4.0.0"
