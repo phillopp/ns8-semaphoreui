@@ -27,7 +27,7 @@ ExecStart=/usr/bin/podman run --conmon-pidfile %t/semaphoreui-app.pid \
     --env SEMAPHORE_DB_HOST=127.0.0.1 \
     --env SEMAPHORE_DB_PORT=5432 \
     --env SEMAPHORE_DB_NAME=semaphoreui \
-    --env SEMAPHORE_DB_PASSWORD=Nethesis,1234 \
+    --env SEMAPHORE_DB_PASS=Nethesis,1234 \
     ${SEMAPHORE_IMAGE}
 ExecStop=/usr/bin/podman stop --ignore --cidfile %t/semaphoreui-app.ctr-id -t 10
 ExecReload=/usr/bin/podman kill -s HUP semaphoreui-app
